@@ -1,0 +1,28 @@
+
+.header {
+    height: 100px;
+}
+
+.cityBox {
+    border: solid 1px black;
+    margin: 20px ;
+
+}
+
+.futureForecast {
+    background-color: lightblue;
+}
+
+.autoCompleteBar {
+    border: solid 3px black;
+    margin: 5px
+}
+
+.card {
+    background-color: skyblue;
+}
+
+.forecastHead {
+    text-align: center;
+    padding-bottom: 15px;
+}
