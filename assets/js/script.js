@@ -11,6 +11,7 @@ var uvIndex =  document.getElementById('uvIndex');
 var selectedCity = document.getElementById('selectedCity');
 var weatherIcon = document.getElementById('weatherIcon');
 
+ 
 
 searchBtn.addEventListener('click', function(event) {
     event.preventDefault()
@@ -58,7 +59,7 @@ function todayForecast(data){
     windSpeed.textContent = data.wind.speed;
     uvIndex.textContent = data.main.uvi
     selectedCity.textContent = currentCity.value;
-    // currentDate.textContent = 
+    currentDate.textContent = moment().format('l');
     weatherIcon.setAttribute('src', 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png');
 }
 
@@ -71,11 +72,11 @@ function fiveDay(data) {
     var day5date = document.getElementById('day5date');
     var day6date = document.getElementById('day6date');
 
-    day2date.textContent = data.list[2]
-    day3date.textContent = data.list[2]
-    day4date.textContent = data.list[2]
-    day5date.textContent = data.list[2]
-    day6date.textContent = data.list[2]
+    day2date.textContent = moment().add(1,'day').format('l');
+    day3date.textContent = moment().add(2,'days').format('l');
+    day4date.textContent = moment().add(3,'days').format('l');
+    day5date.textContent = moment().add(4,'days').format('l');
+    day6date.textContent = moment().add(5,'days').format('l');
 
 
     var day2body = document.getElementById('day2body');
@@ -84,22 +85,33 @@ function fiveDay(data) {
     var day5body = document.getElementById('day5body');
     var day6body = document.getElementById('day6body');
 
-    day2body.textContent = data.list[2]
-    day3ody.textContent = data.list[10]
-    day4body.textContent = data.list[18]
-    day5body.textContent = data.list[26]
-    day6body.textContent = data.list[32]
+    day2body.setAttribute('src', 'http://openweathermap.org/img/wn/' + data.list[2].weather[0].icon + '@2x.png');
+    day3body.setAttribute('src', 'http://openweathermap.org/img/wn/' + data.list[10].weather[0].icon + '@2x.png');
+    day4body.setAttribute('src', 'http://openweathermap.org/img/wn/' + data.list[18].weather[0].icon + '@2x.png');
+    day5body.setAttribute('src', 'http://openweathermap.org/img/wn/' + data.list[26].weather[0].icon + '@2x.png');
+    day6body.setAttribute('src', 'http://openweathermap.org/img/wn/' + data.list[32].weather[0].icon + '@2x.png');
 
-    var day2 = document.getElementById('day2');
-    var day3 = document.getElementById('day3');
-    var day4 = document.getElementById('day4');
-    var day5 = document.getElementById('day5');
-    var day6 = document.getElementById('day6');
+    var day2temp = document.getElementById('day2');
+    var day3temp = document.getElementById('day3');
+    var day4temp = document.getElementById('day4');
+    var day5temp = document.getElementById('day5');
+    var day6temp = document.getElementById('day6');
 
-    day2.textContent = data.list[2]
-    day2.textContent = data.list[10]
-    day4.textContent = data.list[18]
-    day5.textContent = data.list[28]
-    day6.textContent = data.list[32]
+    day2temp.textContent = data.list[2].main.temp;
+    day3temp.textContent = data.list[10].main.temp;
+    day4temp.textContent = data.list[18].main.temp;
+    day5temp.textContent = data.list[28].main.temp;
+    day6temp.textContent = data.list[32].main.temp;
 
+    var day2hum = document.getElementById('day2hum');
+    var day3hum = document.getElementById('day3hum');
+    var day4hum = document.getElementById('day4hum');
+    var day5hum = document.getElementById('day5hum');
+    var day6hum = document.getElementById('day6hum');
+
+    day2hum.textContent = data.list[2].main.humidity;
+    day3hum.textContent = data.list[10].main.humidity;
+    day4hum.textContent = data.list[18].main.humidity;
+    day5hum.textContent = data.list[28].main.humidity;
+    day6hum.textContent = data.list[32].main.humidity;
 }
