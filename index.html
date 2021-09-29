@@ -16,7 +16,7 @@
     <aside class="searchBarCity">
         <h3>Search for a City:</h3>
         <form>
-            <input id="searchBar"></input>
+            <input id="search-bar" type="search" placeholder="Search" ></input>
             <button class="but search-btn" id="search-btn" type="submit">GO</button>
         </form>
         
@@ -29,12 +29,12 @@
                 <div class="col-md-9">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="jumbotron">
-                                <h2> <span id="currrentCity"></span> <span id="currentDate"></span></h2>
-                                <p> Temperature: <span id="currentTemp"></span> </p>
-                                <p> Humidity: <span id="currentHum"></span></p>
-                                <p> Wind Speed: <span id="windSpeed"></span> </p>
-                                <p> UV Index: <span id="uvIndex"></span> </p>
+                            <div class="jumbotron bg-secondary">
+                                <h2> <span id="selectedCity"></span> <span id="currentDate"></span> <image id="weatherIcon"></image> </h2>
+                                <p> Temperature: <span id="currentTemp"></span>°</p>
+                                <p> Humidity: <span id="currentHum"></span>%</p>
+                                <p> Wind Speed: <span id="windSpeed"></span>MPH</p>
+                                <p> UV Index: <span id="uvIndex"></span></p>
                             </div>
                         </div>
                     </div>
@@ -43,10 +43,10 @@
                         <div class="col-md-2">
                             <div class="card">
                                 <h5 class="card-header">
-                                    <span id="date"></span>
+                                    <span id="day2date"></span>
                                 </h5>
                                 <div class="card-body">
-                                    <p class="card-text">
+                                    <p class="card-text" id="day2body">
                                     
                                     </p>
                                 </div>
@@ -57,10 +57,10 @@
                         <div class="col-md-2">
                             <div class="card">
                                 <h5 class="card-header">
-                                    <span id="date"></span>
+                                    <span id="day3date"></span>
                                 </h5>
                                 <div class="card-body">
-                                    <p class="card-text">
+                                    <p class="card-text" id="day3body">
                                     
                                     </p>
                                 </div>
@@ -71,10 +71,10 @@
                         <div class="col-md-2">
                             <div class="card">
                                 <h5 class="card-header">
-                                    <span id="date"></span>
+                                    <span id="day4date"></span>
                                 </h5>
                                 <div class="card-body">
-                                    <p class="card-text">
+                                    <p class="card-text" id="day4body">
                                     
                                     </p>
                                 </div>
@@ -85,10 +85,10 @@
                         <div class="col-md-2">
                             <div class="card">
                                 <h5 class="card-header">
-                                    <span id="date"></span>
+                                    <span id="day5date"></span>
                                 </h5>
                                 <div class="card-body">
-                                    <p class="card-text">
+                                    <p class="card-text" id="day5body">
                                     
                                     </p>
                                 </div>
@@ -97,16 +97,16 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="card">
+                            <div class="card">  
                                 <h5 class="card-header">
-                                    <span id="date"></span>
+                                    <span id="day6date"></span>
                                 </h5>
                                 <div class="card-body">
-                                    <p class="card-text">
+                                    <p class="card-text" id="day6body">
                                     
                                     </p>
                                 </div>
-                                <div class="card-footer" id="day5">
+                                <div class="card-footer" id="day6">
                                 </div>
                             </div>
                         </div>
